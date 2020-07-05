@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  tensorflow_jupyter:
+    image: codercom/code-server:latest
+    ports:
+      - 8888:8888
+    volumes:
+      #- ./notebook:/root/notebook/my_notes
+      - web_data:/home/work
+      #- web_data:/usr/share/nginx/html:ro
+    environment:
+      - PASSWORD=foobar
+volumes:
+   web_data:
+      name: vd
